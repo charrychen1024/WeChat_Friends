@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>微信好友</title>
+	<script src="../echarts.js"></script>
+	<script src="../jquery-3.2.1.min.js"></script>
+	<script src="../china.js"></script>
+</head>
+<body>
+	<div id="main" style="width: 1200px;height: 800px">
+	<script type="text/javascript">
+		var myChart = echarts.init(document.getElementById('main'));
+		var option = {
+			title: {
+				text: '微信好友省份分布',
+				left: 'center'
+			},
+			tooltip: {},
+			series: [
+				{
+					name: '省份',
+					type: 'map',
+					mapType: 'china',
+					data: [
+						{name: '浙江', value: 25},
+						{name: '江苏', value: 27},
+					//	{name: '河南', value: 19},
+						{name: '广东', value: 1},
+						{name: '上海', value: 1},
+					//	{name: '辽宁', value: 6},
+						{name: '北京', value: 3},
+					//	{name: '湖北', value: 3},
+						{name: '江西', value: 1},
+						{name: '安徽', value: 1},
+					//	{name: '湖南', value: 3},
+					//	{name: '广西', value: 2},
+						{name: '四川', value: 9},
+						{name: '贵州', value: 2},
+						{name: '重庆', value: 1},
+					//	{name: '甘肃', value: 1},
+					//	{name: '宁夏', value: 1},
+					//	{name: '新疆', value: 1},
+						{name: '山西', value: 1},
+					//	{name: '天津', value: 1},
+					//	{name: '福建', value: 1},
+						{name: '陕西', value: 1},
+						{name: '山东', value: 3}
+						
+					],
+					label: {
+						normal: {
+							show: true
+						},
+						emphasis: {
+							show: true
+						}
+					}
+				}
+			],
+			visualMap: [{
+						type: 'continuous',
+						min: 0,
+						max: 30,
+						left: 'left',
+						bottom: 'bottom',
+						text: ['Max', 'Min'],
+						calculable: true,
+						color: ['#d94e5d', '#50a3ba', '#eac736']
+					}
+			],
+			toolbox: {
+				show: true,
+				orient: 'horizontal',
+				feature: {
+					dataView: {readOnly: false},
+					restore: {},
+					saveAsImage: {}
+				}
+			}
+		};
+		myChart.setOption(option);
+	</script>
+</body>
+</html>
